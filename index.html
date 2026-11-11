@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>305 Car Rentals | Miami Car Rentals</title>
+  <meta name="description" content="Miami car rentals, black car service, and airport transfers. Book your ride by the day or week, or call 424-347-1239 for a quote. Contact us through Facebook.">
+  <link rel="canonical" href="https://305carrentals.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="305 Car Rentals | Miami Car Rentals">
+  <meta property="og:description" content="Miami car rentals, black car service, and airport transfers. Book your ride by the day or week, or call 424-347-1239 for a quote. Contact us through Facebook.">
+  <meta property="og:url" content="https://305carrentals.com/">
+  <meta property="og:site_name" content="305 Car Rentals">
+  <meta property="og:image" content="https://305carrentals.com/images/hero-night.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="305 Car Rentals | Miami Car Rentals">
+  <meta name="twitter:description" content="Miami car rentals, black car service, and airport transfers. Book your ride by the day or week, or call 424-347-1239 for a quote.">
+  <meta name="twitter:image" content="https://305carrentals.com/images/hero-night.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRental",
+    "name": "305 Car Rentals",
+    "url": "https://305carrentals.com/",
+    "telephone": "+1-424-347-1239",
+    "areaServed": "Miami"
+  }
+  </script>
+  <style>
+    @font-face {
+      font-family: "Oswald";
+      src: url("fonts/oswald-latin.woff2") format("woff2");
+      font-weight: 400 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Outfit";
+      src: url("fonts/outfit-latin.woff2") format("woff2");
+      font-weight: 300 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --bg: #07060f;
+      --bg-2: #100c1c;
+      --card: rgba(16, 14, 28, 0.86);
+      --ink: #f6f3ee;
+      --muted: #c6c0d4;
+      --pink: #ff3d9a;
+      --teal: #2ef0d0;
+      --gold: #d4b36a;
+      --line: rgba(212, 179, 106, 0.28);
+      --glow-pink: rgba(255, 61, 154, 0.34);
+      --glow-teal: rgba(46, 240, 208, 0.22);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Outfit, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(900px 480px at 8% -10%, var(--glow-pink), transparent 55%),
+        radial-gradient(800px 500px at 100% 8%, var(--glow-teal), transparent 50%),
+        radial-gradient(700px 400px at 80% 100%, rgba(255, 61, 154, 0.12), transparent 55%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: var(--teal); }
+    a:hover { color: #8ffaea; }
+    img { max-width: 100%; display: block; height: auto; }
+    .wrap {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 6, 15, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.95rem 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      margin: 0;
+      font-family: Oswald, Impact, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.92rem;
+      color: var(--gold);
+    }
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+    }
+    .header-links a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+    .header-links a:hover { color: var(--teal); }
+    .header-phone {
+      color: var(--gold) !important;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .hero {
+      padding: 3.4rem 0 2.4rem;
+    }
+    .eyebrow {
+      margin: 0 0 0.85rem;
+      font-family: Oswald, Impact, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--teal);
+    }
+    .hero h1 {
+      font-family: Oswald, Impact, sans-serif;
+      font-weight: 500;
+      font-size: clamp(2.4rem, 8vw, 4.6rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .hero h1 span {
+      display: block;
+      background: linear-gradient(90deg, var(--ink) 0%, var(--gold) 55%, var(--pink) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero .lead {
+      margin: 0 0 1.6rem;
+      max-width: 36rem;
+      color: var(--muted);
+      font-size: 1.08rem;
+      font-weight: 300;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.15rem;
+      padding: 0.7rem 1.35rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: Oswald, Impact, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1rem;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+    }
+    .btn-primary {
+      color: #14010c;
+      background: linear-gradient(90deg, var(--pink), #ff7ac0 55%, var(--gold));
+      box-shadow: 0 0 24px var(--glow-pink);
+    }
+    .btn-primary:hover {
+      color: #14010c;
+      transform: translateY(-1px);
+      box-shadow: 0 0 32px var(--glow-pink);
+    }
+    .btn-secondary {
+      color: var(--ink);
+      background: transparent;
+      border-color: var(--teal);
+      box-shadow: 0 0 18px var(--glow-teal);
+    }
+    .btn-secondary:hover {
+      color: #06241f;
+      background: var(--teal);
+    }
+    .hero-photo {
+      margin: 2.25rem 0 0;
+      border: 1px solid var(--line);
+      padding: 0.55rem;
+      background: rgba(255, 255, 255, 0.02);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+    .hero-photo img { width: 100%; }
+    section { padding: 0 0 3.6rem; }
+    h2 {
+      font-family: Oswald, Impact, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 1.05rem;
+      color: var(--gold);
+      margin: 0 0 1.5rem;
+    }
+    .points {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .point {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 1.2rem 1.15rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .point::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--pink), var(--teal));
+    }
+    .point h3 {
+      margin: 0 0 0.4rem;
+      font-family: Oswald, Impact, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1.05rem;
+    }
+    .point p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .gallery {
+      padding-bottom: 3.6rem;
+    }
+    .gallery .frame {
+      border: 1px solid var(--line);
+      padding: 0.55rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .gallery img { width: 100%; }
+    .book-grid, .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 1.35rem 1.2rem 1.4rem;
+    }
+    .panel h3 {
+      margin: 0 0 0.45rem;
+      font-family: Oswald, Impact, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 1.02rem;
+      color: var(--teal);
+    }
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .panel .cta-row { margin-top: 1.1rem; }
+    .phone-xl {
+      display: inline-block;
+      margin-top: 0.35rem;
+      font-family: Oswald, Impact, sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .phone-xl:hover { color: var(--gold); opacity: 0.9; }
+    .contact p { margin: 0 0 0.8rem; color: var(--muted); }
+    footer.site-footer {
+      border-top: 1px solid var(--line);
+      padding: 1.4rem 0 2.2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    footer.site-footer p { margin: 0; }
+    @media (min-width: 700px) {
+      .wrap { width: min(1120px, calc(100% - 2.5rem)); }
+      .hero { padding: 4.5rem 0 2.8rem; }
+      .points { grid-template-columns: repeat(2, 1fr); }
+      .book-grid, .contact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <p class="brand">305 Car Rentals</p>
+      <nav class="header-links" aria-label="Primary">
+        <a href="#why">Why us</a>
+        <a href="#book">How to book</a>
+        <a href="#contact">Contact</a>
+        <a class="header-phone" href="tel:+14243471239">424-347-1239</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">Miami car rentals · Black car · Airport transfers</p>
+      <h1><span>305 Car Rentals</span></h1>
+      <p class="lead">Luxury and everyday rentals in Miami, plus black car service and airport transfers. Book your ride by the day or week, or call for a quote.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+14243471239">Book your ride</a>
+        <a class="btn btn-secondary" href="tel:+14243471239">Call for a quote</a>
+      </div>
+      <figure class="hero-photo">
+        <img src="images/hero-night.jpg" width="1200" height="630" alt="A black car on a Miami waterfront at night, with the message Book your ride.">
+      </figure>
+    </section>
+
+    <section class="wrap" id="why" aria-labelledby="why-heading">
+      <h2 id="why-heading">Why rent with us</h2>
+      <div class="points">
+        <article class="point">
+          <h3>Luxury and everyday rentals</h3>
+          <p>The right car for a night out, a weekend, or a week in Miami.</p>
+        </article>
+        <article class="point">
+          <h3>Black car service</h3>
+          <p>A professional black car for meetings, events, and evenings out.</p>
+        </article>
+        <article class="point">
+          <h3>Airport transfers</h3>
+          <p>Scheduled pickup and drop-off to and from the airport.</p>
+        </article>
+        <article class="point">
+          <h3>By the day or week</h3>
+          <p>Tell us when you need the ride, and we will help you reserve it.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery wrap" aria-label="Miami rental photos">
+      <figure class="frame">
+        <img src="images/miami-daytime.jpg" width="1200" height="630" alt="A black car driving along a palm-lined Miami waterfront during the day, with the message Miami, in the right car.">
+      </figure>
+    </section>
+
+    <section class="wrap" id="book" aria-labelledby="book-heading">
+      <h2 id="book-heading">How to book</h2>
+      <div class="book-grid">
+        <article class="panel">
+          <h3>Call us</h3>
+          <p>Call to book your ride or to ask for a quote. We will help you reserve a rental, a black car, or an airport transfer.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:+14243471239">Book your ride</a>
+            <a class="btn btn-secondary" href="tel:+14243471239">Call for a quote</a>
+          </div>
+        </article>
+        <article class="panel">
+          <h3>Message us</h3>
+          <p><a href="https://www.facebook.com/profile.php?id=100071107656301">Contact us through Facebook.</a> Send a message with the dates and the kind of ride you need.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact wrap" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <div class="contact-grid">
+        <article class="panel">
+          <h3>Phone</h3>
+          <p>Click to call.</p>
+          <a class="phone-xl" href="tel:+14243471239">424-347-1239</a>
+        </article>
+        <article class="panel">
+          <h3>Facebook</h3>
+          <p><a href="https://www.facebook.com/profile.php?id=100071107656301">Contact us through Facebook.</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>305 Car Rentals · Miami</p>
+    </div>
+  </footer>
+</body>
+</html>

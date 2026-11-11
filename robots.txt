@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://305carrentals.com/sitemap.xml
