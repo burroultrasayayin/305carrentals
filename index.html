@@ -119,8 +119,45 @@
       font-weight: 600;
       letter-spacing: 0.04em;
     }
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.35rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      color: #14010c !important;
+      background: linear-gradient(90deg, var(--pink), #ff7ac0 55%, var(--gold));
+      font-family: Oswald, Impact, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+    .header-cta:hover { color: #14010c !important; opacity: 0.92; }
+    #thanks {
+      display: none;
+      scroll-margin-top: 5.5rem;
+      margin: 1.25rem auto 0;
+      background: var(--card);
+      border: 1px solid var(--teal);
+      box-shadow: 0 0 24px var(--glow-teal);
+      padding: 1rem 1.15rem;
+    }
+    #thanks:target,
+    #thanks.is-visible { display: block; }
+    #thanks p {
+      margin: 0;
+      color: var(--ink);
+    }
     .hero {
       padding: 3.4rem 0 2.4rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      align-items: start;
     }
     .eyebrow {
       margin: 0 0 0.85rem;
@@ -134,7 +171,7 @@
     .hero h1 {
       font-family: Oswald, Impact, sans-serif;
       font-weight: 500;
-      font-size: clamp(2.4rem, 8vw, 4.6rem);
+      font-size: clamp(2.4rem, 8vw, 4.4rem);
       line-height: 0.95;
       letter-spacing: 0.02em;
       text-transform: uppercase;
@@ -148,10 +185,74 @@
       color: transparent;
     }
     .hero .lead {
-      margin: 0 0 1.6rem;
+      margin: 0;
       max-width: 36rem;
       color: var(--muted);
       font-size: 1.08rem;
+      font-weight: 300;
+    }
+    .quote-form {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 1.25rem 1.15rem 1.35rem;
+      box-shadow: 0 0 28px var(--glow-pink);
+    }
+    .quote-form h2 {
+      margin: 0 0 0.35rem;
+    }
+    .quote-form .form-intro {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 0.98rem;
+    }
+    .fields {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+    .fields-need { margin-top: 0.85rem; }
+    .field label {
+      display: block;
+      margin: 0 0 0.3rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+    .optional {
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      margin: 0;
+      padding: 0.72rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #0c0b16;
+      color: var(--ink);
+      font-family: Outfit, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .field textarea { resize: vertical; min-height: 6.5rem; }
+    .field input:focus,
+    .field textarea:focus {
+      outline: 2px solid var(--teal);
+      outline-offset: 1px;
+      border-color: var(--teal);
+    }
+    .quote-form .btn {
+      width: 100%;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    .after-form {
+      margin-top: 1.15rem;
+    }
+    .after-form p {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
       font-weight: 300;
     }
     .cta-row {
@@ -304,11 +405,21 @@
       font-size: 0.92rem;
     }
     footer.site-footer p { margin: 0; }
+    @media (max-width: 699px) {
+      .header-links a:not(.header-cta):not(.header-phone) { display: none; }
+      .header-row { padding: 0.75rem 0; gap: 0.65rem; }
+      .header-links { gap: 0.85rem; }
+    }
     @media (min-width: 700px) {
       .wrap { width: min(1120px, calc(100% - 2.5rem)); }
       .hero { padding: 4.5rem 0 2.8rem; }
       .points { grid-template-columns: repeat(2, 1fr); }
       .book-grid, .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      .fields-top { grid-template-columns: 1fr 1fr; }
+      .fields-top .field-name { grid-column: 1 / -1; }
+    }
+    @media (min-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr 1.05fr; gap: 2rem; align-items: center; }
     }
   </style>
 </head>
@@ -317,6 +428,7 @@
     <div class="wrap header-row">
       <p class="brand">305 Car Rentals</p>
       <nav class="header-links" aria-label="Primary">
+        <a class="header-cta" href="#quote">Get a quote</a>
         <a href="#why">Why us</a>
         <a href="#book">How to book</a>
         <a href="#contact">Contact</a>
@@ -325,13 +437,55 @@
     </div>
   </header>
   <main>
+    <div class="wrap">
+      <div id="thanks" role="status" tabindex="-1">
+        <p>Thank you. We received your request and will get back to you with a quote.</p>
+      </div>
+    </div>
     <section class="hero wrap">
-      <p class="eyebrow">Miami car rentals · Black car · Airport transfers</p>
-      <h1><span>305 Car Rentals</span></h1>
-      <p class="lead">Luxury and everyday rentals in Miami, plus black car service and airport transfers. Book your ride by the day or week, or call for a quote.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="tel:+14243471239">Book your ride</a>
-        <a class="btn btn-secondary" href="tel:+14243471239">Call for a quote</a>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Miami car rentals · Black car · Airport transfers</p>
+          <h1><span>305 Car Rentals</span></h1>
+          <p class="lead">Luxury and everyday rentals in Miami, plus black car service and airport transfers. Get a free quote, then book your ride by the day or week.</p>
+        </div>
+        <form class="quote-form" id="quote" action="https://formsubmit.co/lafamdmc@gmail.com" method="POST">
+          <h2>Get a free quote</h2>
+          <p class="form-intro">Tell us a little about the ride you need, and we will follow up with a quote.</p>
+          <input type="hidden" name="_subject" value="New 305 Car Rentals lead">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://305carrentals.com/#thanks">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="fields fields-top">
+            <div class="field field-name">
+              <label for="quote-name">Name</label>
+              <input id="quote-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="quote-phone">Phone</label>
+              <input id="quote-phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="quote-email">Email</label>
+              <input id="quote-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="fields fields-need">
+            <div class="field">
+              <label for="quote-need">What do you need? <span class="optional">(optional)</span></label>
+              <textarea id="quote-need" name="need" rows="4" placeholder="Rental, black car, airport transfer, and your dates"></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Get my quote</button>
+        </form>
+      </div>
+      <div class="after-form">
+        <p>Prefer to talk? Book your ride, or contact us through Facebook.</p>
+        <div class="cta-row">
+          <a class="btn btn-secondary" href="tel:+14243471239">Prefer to talk? Book your ride</a>
+          <a class="btn btn-secondary" href="https://www.facebook.com/profile.php?id=100071107656301">Contact us through Facebook</a>
+        </div>
       </div>
       <figure class="hero-photo">
         <img src="images/hero-night.jpg" width="1200" height="630" alt="A black car on a Miami waterfront at night, with the message Book your ride.">
@@ -370,16 +524,18 @@
       <h2 id="book-heading">How to book</h2>
       <div class="book-grid">
         <article class="panel">
-          <h3>Call us</h3>
-          <p>Call to book your ride or to ask for a quote. We will help you reserve a rental, a black car, or an airport transfer.</p>
+          <h3>Get a free quote</h3>
+          <p>Start with the form at the top of the page. Tell us what you need, and we will follow up with a quote.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="tel:+14243471239">Book your ride</a>
-            <a class="btn btn-secondary" href="tel:+14243471239">Call for a quote</a>
+            <a class="btn btn-primary" href="#quote">Get a free quote</a>
           </div>
         </article>
         <article class="panel">
-          <h3>Message us</h3>
-          <p><a href="https://www.facebook.com/profile.php?id=100071107656301">Contact us through Facebook.</a> Send a message with the dates and the kind of ride you need.</p>
+          <h3>Prefer to talk?</h3>
+          <p>You can also call to book your ride, or <a href="https://www.facebook.com/profile.php?id=100071107656301">contact us through Facebook.</a></p>
+          <div class="cta-row">
+            <a class="btn btn-secondary" href="tel:+14243471239">Prefer to talk? Book your ride</a>
+          </div>
         </article>
       </div>
     </section>
@@ -404,5 +560,19 @@
       <p>305 Car Rentals · Miami</p>
     </div>
   </footer>
+  <script>
+    (function () {
+      var thanks = document.getElementById("thanks");
+      if (!thanks) return;
+      function showThanks() {
+        if (window.location.hash === "#thanks") {
+          thanks.classList.add("is-visible");
+          thanks.focus();
+        }
+      }
+      showThanks();
+      window.addEventListener("hashchange", showThanks);
+    })();
+  </script>
 </body>
 </html>
